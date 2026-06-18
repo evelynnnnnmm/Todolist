@@ -138,9 +138,6 @@ export function TodoPage() {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="text-sm font-medium text-slate-500">To Do List</p>
-          <h2 className="mt-1 text-2xl font-semibold tracking-normal text-slate-950">
-            待办事项
-          </h2>
         </div>
         <button
           type="button"
@@ -165,7 +162,7 @@ export function TodoPage() {
                 <th className="w-40 px-4 py-3 text-sm font-semibold text-slate-600">
                   完成状态
                 </th>
-                <th className="w-36 px-4 py-3 text-right text-sm font-semibold text-slate-600">
+                <th className="w-56 px-4 py-3 text-right text-sm font-semibold text-slate-600">
                   操作
                 </th>
               </tr>
@@ -187,11 +184,7 @@ export function TodoPage() {
                       {formatTaskDatetime(task.datetime)}
                     </td>
                     <td className="px-4 py-3 text-sm font-medium text-slate-900">
-                      <span
-                        className={
-                          task.completed ? 'text-slate-400 line-through' : ''
-                        }
-                      >
+                      <span className="text-slate-900 no-underline">
                         {task.content}
                       </span>
                     </td>
@@ -212,18 +205,18 @@ export function TodoPage() {
                       </select>
                     </td>
                     <td className="px-4 py-3">
-                      <div className="flex justify-end gap-2">
+                      <div className="flex flex-nowrap justify-end gap-3">
                         <button
                           type="button"
                           onClick={() => openEditForm(task)}
-                          className="h-9 rounded-md border border-slate-200 px-3 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100"
+                          className="inline-flex min-h-12 min-w-20 items-center justify-center whitespace-nowrap rounded-md border border-slate-200 px-6 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100"
                         >
                           编辑
                         </button>
                         <button
                           type="button"
                           onClick={() => handleDelete(task.id)}
-                          className="h-9 rounded-md border border-slate-200 px-3 text-sm font-medium text-slate-500 transition-colors hover:border-rose-200 hover:bg-rose-50 hover:text-rose-700"
+                          className="inline-flex min-h-12 min-w-20 items-center justify-center whitespace-nowrap rounded-md border border-slate-200 px-6 py-3 text-sm font-medium text-slate-700 transition-colors hover:border-rose-200 hover:bg-rose-50 hover:text-rose-700"
                         >
                           删除
                         </button>
