@@ -20,7 +20,7 @@ export function Layout({ children }: LayoutProps) {
             <img
               src={logoUrl}
               alt="To Do List Logo"
-              className="h-28 w-28 shrink-0 rounded-lg object-contain p-2 sm:h-32 sm:w-32 lg:h-36 lg:w-36"
+              className="h-28 w-auto shrink-0 bg-transparent object-contain sm:h-32 lg:h-36"
             />
           </div>
           <nav className="flex items-center gap-2" aria-label="主导航">
